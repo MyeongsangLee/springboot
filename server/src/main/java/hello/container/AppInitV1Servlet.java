@@ -3,6 +3,9 @@ package hello.container;
 import hello.servlet.HelloServlet;
 import jakarta.servlet.ServletContext;
 
+/**
+ * http://localhost:8080/hello-servlet
+ */
 public class AppInitV1Servlet implements AppInit{
     @Override
     public void onStartup(ServletContext servletContext) {
