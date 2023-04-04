@@ -1,4 +1,4 @@
-package hello.embed;
+package hello.boot;
 
 import hello.spring.HelloConfig;
 import org.apache.catalina.Context;
@@ -8,10 +8,12 @@ import org.apache.catalina.startup.Tomcat;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
-public class EmbedTomcatSpringMain {
+import java.util.List;
 
-    public static void main(String[] args) throws LifecycleException {
-        System.out.println("EmbedTomcatSpringMain.main");
+public class MySpringApplication {
+
+    public static void run(Class configClass, String[] args) {
+        System.out.println("MySpringApplication.run args=" + List.of(args));
 
         //톰캣 설정 kdf
         Tomcat tomcat = new Tomcat();
@@ -31,7 +33,10 @@ public class EmbedTomcatSpringMain {
         tomcat.addServlet("", "dispatcher", dispatcher);
         context.addServletMappingDecoded("/", "dispatcher");
 
-        tomcat.start();
-
+        try {
+            tomcat.start();
+        } catch (LifecycleException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
