@@ -1,6 +1,5 @@
 package hello.embed;
 
-import hello.servlet.HelloServlet;
 import hello.spring.HelloConfig;
 import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
@@ -8,8 +7,6 @@ import org.apache.catalina.connector.Connector;
 import org.apache.catalina.startup.Tomcat;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
-
-import java.io.File;
 
 public class EmbedTomcatSpringMain {
 
