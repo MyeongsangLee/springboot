@@ -4,7 +4,6 @@ import lombok.Data;
 
 @Data
 public class Member {
-
     private String memberId;
     private String name;
 
@@ -15,4 +14,6 @@ public class Member {
         this.memberId = memberId;
         this.name = name;
     }
+
+
 }

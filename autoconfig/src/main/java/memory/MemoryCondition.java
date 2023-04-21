@@ -7,7 +7,6 @@ import org.springframework.core.type.AnnotatedTypeMetadata;
 
 @Slf4j
 public class MemoryCondition implements Condition {
-
     @Override
     public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
         String memory = context.getEnvironment().getProperty("memory");

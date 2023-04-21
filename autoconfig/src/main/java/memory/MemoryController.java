@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 public class MemoryController {
+
     private final MemoryFinder memoryFinder;
 
     @GetMapping("/memory")
@@ -17,4 +18,5 @@ public class MemoryController {
         log.info("memory={}", memory);
         return memory;
     }
+
 }

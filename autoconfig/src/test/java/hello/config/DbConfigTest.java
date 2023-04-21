@@ -10,7 +10,7 @@ import org.springframework.transaction.TransactionManager;
 
 import javax.sql.DataSource;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @Slf4j
 @SpringBootTest
@@ -18,22 +18,21 @@ class DbConfigTest {
 
     @Autowired
     DataSource dataSource;
-
     @Autowired
     TransactionManager transactionManager;
-
     @Autowired
     JdbcTemplate jdbcTemplate;
 
     @Test
-    void test() {
+    void checkBean() {
         log.info("dataSource = {}", dataSource);
         log.info("transactionManager = {}", transactionManager);
         log.info("jdbcTemplate = {}", jdbcTemplate);
 
-        Assertions.assertThat(dataSource).isNotNull();
-        Assertions.assertThat(transactionManager).isNotNull();
-        Assertions.assertThat(jdbcTemplate).isNotNull();
-    }
+        assertThat(dataSource).isNotNull();
+        assertThat(transactionManager).isNotNull();
+        assertThat(jdbcTemplate).isNotNull();
 
+
+    }
 }
