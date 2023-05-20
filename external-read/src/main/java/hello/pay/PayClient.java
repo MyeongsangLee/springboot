@@ -1,2 +1,5 @@
-package hello.pay;public class PayClient {
+package hello.pay;
+
+public interface PayClient {
+    void pay(int money);
 }

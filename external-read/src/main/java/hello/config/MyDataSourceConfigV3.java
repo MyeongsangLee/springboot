@@ -1,19 +1,19 @@
 package hello.config;
 
 import hello.datasource.MyDataSource;
-import hello.datasource.MyDatasourcePropertiesV1;
 import hello.datasource.MyDatasourcePropertiesV2;
+import hello.datasource.MyDatasourcePropertiesV3;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
 @Slf4j
-@EnableConfigurationProperties(MyDatasourcePropertiesV2.class)
-public class MyDataSourceConfigV2 {
+@EnableConfigurationProperties(MyDatasourcePropertiesV3.class)
+public class MyDataSourceConfigV3 {
 
-    private final MyDatasourcePropertiesV2 properties;
+    private final MyDatasourcePropertiesV3 properties;
 
-    public MyDataSourceConfigV2(MyDatasourcePropertiesV2 properties) {
+    public MyDataSourceConfigV3(MyDatasourcePropertiesV3 properties) {
         this.properties = properties;
     }
 
